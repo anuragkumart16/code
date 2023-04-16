@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        div {
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgb(247, 196, 130);
+        }
+
+        button {
+            margin: 3px 3px;
+            height: 50px;
+            width: 50px;
+            background-color: white;
+            color: blue;
+            border-radius: 30px;
+            border-color: white;
+
+        }
+
+        button:hover {
+            background-color: rgb(156, 89, 245);
+            color: white;
+        }
+
+        .main {
+            display: flex;
+            overflow: auto;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: stretch;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .sidebar {
+            display: flex;
+            overflow: auto;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style=" border-style: groove; border-color: black;">
+        <div>
+
+            <h1>Calculator</h1>
+        </div>
+        <div class="row">
+            <div class="display"
+                style=" background-color: rgb(53, 201, 152); border-radius: 30px; border-color: black; margin: 3px;">
+                <h2 id="screen">0</h2>
+            </div>
+        </div>
+        <div class="main">
+
+            <div>
+
+                <div class="row">
+                    <button style="color:white; background-color: rgb(148, 78, 13);" onclick="divide()">/</button>
+                    <button style="color:white; background-color: rgb(155, 233, 39);" onclick="multiply()">x</button>
+                    <button style="color: black; background-color: yellow;" onclick="subtract()">-</button>
+                </div>
+                <div class="row">
+                    <button id="r1" onclick="b1()">1</button>
+                    <button id="r2" onclick="b2()">2</button>
+                    <button onclick="b3()">3</button>
+                </div>
+                <div class="row">
+                    <button onclick="b4()">4</button>
+                    <button  onclick="b5()">5</button>
+                    <button onclick="b6()">6</button>
+                </div>
+                <div class="row">
+                    <button onclick="b7()">7</button>
+                    <button onclick="b8()">8</button>
+                    <button onclick="b9()">9</button>
+                </div>
+                <div>
+                    <button style="width:170px;" onclick="b0()">0</button>
+                </div>
+            </div>
+            <div class="sidebar">
+
+                <button style="color:white; background-color: red;" onclick="clean()" id="clean">Clear</button>
+                <button style="border-radius: 16px;
+                height: 84px;
+                background-color: rgb(110, 211, 241);
+                color: white;" onclick="add()">
+                    +</button>
+                <button style="border-radius: 16px;
+                height: 128px; color: white; background-color: chocolate;" onclick="enter()">Enter</button>
+            </div>
+        </div>
+</body>
+<script>
+    // standard variables
+    var num = 0;
+    var tap = 0;
+    var number=0;
+    var operation=0;
+    // to clear the screen
+    function clean() {
+        document.getElementById("screen").innerHTML = 0;
+        tap = 0;
+        num = 0;
+    }
+    // button fuctions
+    function b1() {
+        if (tap == 0) {
+            tap = 1;
+            num = 1;
+            document.getElementById("screen").innerHTML = num;
+        }
+        else {
+            num = (num * 10) + 1;
+            document.getElementById("screen").innerHTML = num;
+        }
+
+    }
+    function b2() {
+        if (tap == 0) {
+            tap = 1;
+            num = 2;
+            document.getElementById("screen").innerHTML = num;
+        }
+        else {
+            num = (num * 10) + 2;
+            document.getElementById("screen").innerHTML = num;
+        }
+    }
+    function b3() {
+        if (tap == 0) {
+            tap = 1;
+            num = 3;
+            document.getElementById("screen").innerHTML = num;
+        }
+        else {
+            num = (num * 10) + 3;
+            document.getElementById("screen").innerHTML = num;
+        }
+    }
+    function b4() {
+        if (tap == 0) {
+            tap = 1;
+            num = 4;
+            document.getElementById("screen").innerHTML = num;
+        }
+        else {
+            num = (num * 10) + 4;
+            document.getElementById("screen").innerHTML = num;
+        }
+    }
+    function b5() {
+        if (tap == 0) {
+            tap = 1;
+            num = 5;
+            document.getElementById("screen").innerHTML = num;
+        }
+        else {
+            num = (num * 10) + 5;
+            document.getElementById("screen").innerHTML = num;
+        }
+    }
+    function b6() {
+        if (tap == 0) {
+            tap = 1;
+            num = 6;
+            document.getElementById("screen").innerHTML = num;
+        }
+        else {
+            num = (num * 10) + 6;
+            document.getElementById("screen").innerHTML = num;
+        }
+    }
+    function b7() {
+        if (tap == 0) {
+            tap = 1;
+            num = 7;
+            document.getElementById("screen").innerHTML = num;
+        }
+        else {
+            num = (num * 10) + 7;
+            document.getElementById("screen").innerHTML = num;
+        }
+    }
+    function b8() {
+        if (tap == 0) {
+            tap = 1;
+            num = 8;
+            document.getElementById("screen").innerHTML = num;
+        }
+        else {
+            num = (num * 10) + 8;
+            document.getElementById("screen").innerHTML = num;
+        }
+    }
+    function b9() {
+        if (tap == 0) {
+            tap = 1;
+            num = 9;
+            document.getElementById("screen").innerHTML = num;
+        }
+        else {
+            num = (num * 10) + 9;
+            document.getElementById("screen").innerHTML = num;
+        }
+    }
+    function b0() {
+        if (tap!=0) {
+            num=num*10
+            document.getElementById("screen").innerHTML=num;
+        }
+    }
+
+    // add fuction
+    function add(){
+        number=num;
+        num=0;
+        operation=1;
+    }
+    function subtract(){
+        number=num;
+        num=0;
+        operation=2;
+    }
+    function multiply(){
+        number=num;
+        num=0;
+        operation=3;
+    }
+    function divide(){
+        number=num;
+        num=0;
+        operation=4;
+    }
+    function enter(){
+        if (operation==1){
+            document.getElementById("screen").innerHTML= (number + num);
+        }
+        else if (operation==2){
+            document.getElementById("screen").innerHTML=(number-num);
+        }
+        else if (operation==3){
+            document.getElementById("screen").innerHTML=(number*num);
+        }
+        else if (operation==4){
+            document.getElementById("screen").innerHTML=(number/num);
+        }
+    }
+
+</script>
+</div>
+
+</html>
